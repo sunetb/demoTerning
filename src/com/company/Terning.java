@@ -9,7 +9,6 @@ public class Terning {
 
     public Terning (){
         kast();
-        System.out.println("Konstruktøren blev kaldt");
     }
 
     void kast(){
@@ -21,6 +20,16 @@ public class Terning {
        return slag;
     }
 
-
-
+    @Override
+    public String toString() {
+        switch (slag){
+            case 1 : return ".";
+            case 2 : return "..";
+            case 3 : return "...";
+            case 4 : return "::";
+            case 5 : return ":.:";
+            case 6: return ":::";
+        }
+        return "Fejl i terning toString() med værdien "+slag ;
+    }
 }
