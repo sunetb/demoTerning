@@ -101,4 +101,12 @@ public class Raflebæger {
 
                 return resultat;
         }
+        String resultat (){
+                String res = "";
+                for (Terning t : terninger){
+                        res += " "+t.getVærdi();
+                }
+                return res;
+        }
+
 }
