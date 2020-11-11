@@ -36,9 +36,12 @@ public class Raflebæger {
 
         @Override
         public String toString() {
-                return "Raflebæger{" +
-                        "terninger=" + Arrays.toString(terninger) +
-                        '}';
+                String res = "Raflebæger: ";
+                for (Terning t : terninger){
+                        res += t + " ";
+
+                }
+                return res;
         }
 
         boolean erErDerSlåetEn(int slag){
