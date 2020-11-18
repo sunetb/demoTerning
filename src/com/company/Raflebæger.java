@@ -8,8 +8,11 @@ public class Raflebæger {
 
         public Raflebæger (){
                 terninger = new Terning[5];
+
                 for (int i = 0; i < terninger.length; i++) {
-                        terninger[i] = new Terning();
+                        Terning t = new Terning();
+                        terninger[i] =t;
+
                  }
 
         }
@@ -46,6 +49,7 @@ public class Raflebæger {
 
         boolean erErDerSlåetEn(int slag){
 
+
                 for (Terning t : terninger){
                         if (t.getVærdi() == slag){
                                 return true;
@@ -56,6 +60,8 @@ public class Raflebæger {
 
         }
 
+
+
         int antalSlået(int slag){
                 int res = 0;
                 for (Terning t : terninger){
@@ -64,6 +70,7 @@ public class Raflebæger {
                 }
                 return res;
         }
+
 
 
 
@@ -100,16 +107,58 @@ public class Raflebæger {
                 for (Terning t : terninger){
                         if (t.getVærdi() == slag)
                                 resultat.add(t);
+
                 }
+
+                // 2,3,4,5
+                        if (resultat.size() == 0) return new ArrayList<Terning>();
+                        Terning t = resultat.get(0);
+                        resultat.remove(0);
+                        resultat.add(t);
 
                 return resultat;
         }
+
+
+
+
+
         String resultat (){
                 String res = "";
                 for (Terning t : terninger){
                         res += " "+t.getVærdi();
                 }
                 return res;
+        }
+
+        void sorter (){
+
+                //Bubble
+
+                boolean byt = false;
+
+                long starttid = System.currentTimeMillis();
+
+                for (int grænse = terninger.length-1; grænse >= 0; grænse--) {
+                        for (int j = 0; j < grænse; j++) {
+                                Terning temp = terninger[j];
+                                if(j < terninger.length && temp.getVærdi() > terninger[j+1].getVærdi()){
+
+                                        //byt
+                                        terninger[j] = terninger[j+1];
+                                        terninger[j+1] = temp;
+                                        byt = true;
+
+                                }
+
+                        }
+                        //Optional: Har vi kørt en hel runde uden at bytte nogen?
+                        if (byt = false) break;
+                        byt = false;
+                }
+                long sluttid = System.currentTimeMillis();
+                System.out.println("Antal milisekunder: "+(sluttid-starttid));
+                System.out.println("Test sortering: " + resultat());
         }
 
 }

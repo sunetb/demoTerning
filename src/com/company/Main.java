@@ -31,6 +31,7 @@ public class Main {
             System.out.println("|" + sekserterningerNem.get(i) + "|");
         }
 
+        yatzy.sorter();
 
         Raflebæger meyer = new Raflebæger(2);
         meyer.ryst();
