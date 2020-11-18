@@ -124,7 +124,7 @@ public class Raflebæger {
 
 
         String resultat (){
-                String res = "";
+                String res = "("+ Terning.antalTerninger + ")";//For at vise static
                 for (Terning t : terninger){
                         res += " "+t.getVærdi();
                 }

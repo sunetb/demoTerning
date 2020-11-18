@@ -3,11 +3,12 @@ package com.company;
 import java.util.Random;
 
 public class Terning {
-
+    static int antalTerninger = 0; //Dårlig skik men formålet er at vise static
     private int slag = -1;
     Random r = new Random();
 
     public Terning (){
+        antalTerninger++;
         kast();
     }
 
