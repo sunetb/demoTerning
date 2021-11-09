@@ -103,6 +103,11 @@ public class Raflebæger {
                 return res;
         }
 
+        int binærSøgning (int værdi){
+            //TODO skriv din kode her
+            return -1;
+        }
+
         boolean lilleStraight (){
                 boolean straight = erErDerSlåetEn(1) && erErDerSlåetEn(2) && erErDerSlåetEn(3) && erErDerSlåetEn(4);
                 return straight;
@@ -112,7 +117,7 @@ public class Raflebæger {
                 return antalSlået(værdi) > 1;
         }
 
-        void sorter (){
+        void sorter (){//Inspireret af https://www.javatpoint.com/bubble-sort-in-java
 
                 //Bubble sort
 
