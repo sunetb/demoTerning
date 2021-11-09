@@ -4,17 +4,16 @@ import java.util.ArrayList;
 
 public class Main {
 
-
-
-
     public static void main(String[] args) {
 
-
-        Raflebæger yatzy = new Raflebæger();
+        Raflebæger yatzy = new Raflebæger(1000);
         yatzy.ryst();
+        int[] test = {9,8,7,6,5,4,3,2,1};
+        yatzy.brugTestdata(test);
+
         System.out.println("Yatzy-bæger sum: " + yatzy.sum());
         System.out.println(yatzy.resultat());
-        System.out.println(yatzy);
+        System.out.println(yatzy);//toString
         System.out.println("Er der slået en sekser? "+ yatzy.erErDerSlåetEn(6));
         System.out.println("Antal seksere: " + yatzy.antalSlået(6));
 
@@ -31,15 +30,19 @@ public class Main {
             System.out.println("|" + sekserterningerNem.get(i) + "|");
         }
 
-        yatzy.sorter();
+        System.out.println("\n Nu sorterer vi! \n");
 
-        Raflebæger meyer = new Raflebæger(2);
-        meyer.ryst();
-        System.out.println("Meyer-bæger sum: " + meyer.sum());
-        System.out.println(meyer.resultat());
-        System.out.println("Meyer-bæger sum: " + meyer.sum());
-        System.out.println(meyer);
-        System.out.println("Er der slået en sekser? "+ meyer.erErDerSlåetEn(6));
+        yatzy.sorter();
+        //yatzy.sorterNem();
+        //System.out.println(yatzy.resultat());
+
+        System.out.println("\n"); //Printer et afsnitstegn (dvs to incl. println)
+
+        if (yatzy.lilleStraight()) System.out.println("Der er slået en lille straight");
+        else System.out.println("Der er IKKE slået en lille straight");
+
+        System.out.println("Par 2? " + yatzy.par(2));
+
 
     }
 
