@@ -6,6 +6,7 @@ public class Terning implements Comparable<Terning>{
 
     private int slag = -1;
     Random r = new Random();
+    static int antalTerninger = 3;
 
     public Terning (){
         kast();
@@ -21,13 +22,7 @@ public class Terning implements Comparable<Terning>{
 
     int getVærdi(){
 
-        try {
-            Thread.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return slag;
+       return slag;
     }
 
     @Override

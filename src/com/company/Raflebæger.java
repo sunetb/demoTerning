@@ -9,6 +9,8 @@ public class Raflebæger {
 
         public Raflebæger (){
                 terninger = new Terning[5];
+
+
                 for (int i = 0; i < terninger.length; i++) {
                         Terning t = new Terning();
                         terninger[i] =t;
@@ -127,6 +129,7 @@ public class Raflebæger {
                 System.out.println("__________________");
                 long antalSammenligninger = 0;
                 long starttid = System.currentTimeMillis();
+            System.out.println("Starttid"+starttid);
 
                 //Til optimering
                 boolean byt = false;
