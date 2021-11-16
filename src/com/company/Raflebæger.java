@@ -15,6 +15,8 @@ public class Raflebæger {
                         Terning t = new Terning();
                         terninger[i] =t;
                  }
+
+
         }
 
         public Raflebæger (int antalTerninger){
@@ -22,6 +24,12 @@ public class Raflebæger {
                 for (int i = 0; i < terninger.length; i++) {
                         terninger[i] = new Terning();
                 }
+
+            try {
+                terninger[0].setVærdi(8);
+            }catch (SnydException e){
+                e.printStackTrace();
+            }
         }
 
         void ryst(){
@@ -106,7 +114,12 @@ public class Raflebæger {
         }
 
         int binærSøgning (int værdi){
-            //TODO skriv din kode her
+            int start;
+            int slut;
+            start = 0;
+            slut = terninger.length;
+
+
             return -1;
         }
 

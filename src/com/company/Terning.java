@@ -4,9 +4,10 @@ import java.util.Random;
 
 public class Terning implements Comparable<Terning>{
 
+    private int antalSider = 6;
     private int slag = -1;
     Random r = new Random();
-    static int antalTerninger = 3;
+
 
     public Terning (){
         kast();
@@ -16,15 +17,20 @@ public class Terning implements Comparable<Terning>{
         slag = værdi;
     }
 
-    void kast(){
-        slag = r.nextInt(6)+1;
+    public void kast(){
+        slag = r.nextInt(antalSider)+1;
     }
 
-    int getVærdi(){
-
-       return slag;
+    public int getVærdi(){
+        return slag;
     }
 
+    public void setVærdi(int i) throws SnydException{
+        if (i > antalSider){
+            throw new SnydException("Du snyder! Max værdi: "+antalSider + " Du prøver at sætte terningen til at vise "+i);
+        }
+        slag = i;
+    }
     @Override
     public int compareTo(Terning anden){
         if (this.getVærdi() == anden.getVærdi()) return 0;

@@ -6,8 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-        Raflebæger yatzy = new Raflebæger(500);
+        Raflebæger yatzy = new Raflebæger(5);
         yatzy.ryst();
         //int[] test = {9,8,7,6,5,4,3,2,1};
         //yatzy.brugTestdata(test);
